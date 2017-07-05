@@ -84,6 +84,12 @@ $ cd ~
 $ uzip sdk-tools-linux-3859397.zip
 ```
 
+After we unzip, we must update our Android SDK to get a folder 'platform-tools' to get the ADB file
+```
+$ tools/android update sdk --no-ui
+```
+Allow the update and after that we will get the platform-tools' to get the ADB file
+
 Then, we need to configure ~/.bashrc file, so we can using android sdk command from anywhere. Also we need to set the JAVA_HOME path too. Edit .bashrc using your favourite editor:
 
 ```
