@@ -72,7 +72,7 @@ Run this command to download Android SDK (will be located on your /home/your_use
 
 ```
 $ cd ~
-$ wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+$ wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip?hl=id
 ```
 
 Wait until the process is finished.
@@ -81,7 +81,7 @@ Next, run this command to extract the Android SDK that we already downloaded
 
 ```
 $ cd ~
-$ tar -zxvf android-sdk_r24.4.1-linux.tgz
+$ uzip sdk-tools-linux-3859397.zip
 ```
 
 Then, we need to configure ~/.bashrc file, so we can using android sdk command from anywhere. Also we need to set the JAVA_HOME path too. Edit .bashrc using your favourite editor:
