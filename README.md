@@ -81,30 +81,34 @@ Next, run this command to extract the Android SDK that we already downloaded
 
 ```
 $ cd ~
+$ mkdir Android
+$ mv sdk-tools-linux-3859397.zip Android/
+$ cd Android/
 $ unzip sdk-tools-linux-3859397.zip
 ```
 
 After we unzip, we must update our Android SDK to get a folder 'platform-tools' to get the ADB file
 ```
+$ cd ~/Android/
 $ tools/android update sdk --no-ui
 ```
 Allow the update and after that we will get the platform-tools' to get the ADB file
 
 For install build tools, run this command:
 ```
-$ cd ~
+$ cd ~/Android/
 $ tools/android update sdk --filter build-tools-23.0.3,build-tools-25.0.2,build-tools-25.0.3
 ```
 
 For install android SDK platforms, run this command:
 ```
-$ cd ~
+$ cd ~/Android/
 $ tools/android update sdk --filter android-19,android-20,android-21,android-22,android-23
 ```
 
 We can check all SDK package using: (in Installed part)
 ```
-$ cd ~
+$ cd ~/Android/
 $ tools/android list sdk
 ```
 
@@ -117,7 +121,7 @@ $ nano ~/.bashrc
 Move to end of the file, then add this line:
 
 ```
-export ANDROID_HOME=$HOME/android-sdk-linux
+export ANDROID_HOME=$HOME/Android
 export ANDROID_SDK=$ANDROID_HOME
 PATH=$PATH:$ANDROID_HOME/build-tools
 PATH=$PATH:$ANDROID_HOME/platform-tools
