@@ -72,7 +72,7 @@ Run this command to download Android SDK (will be located on your /home/your_use
 
 ```
 $ cd ~
-$ wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip?hl=id
+$ wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 ```
 
 Wait until the process is finished.
@@ -81,7 +81,7 @@ Next, run this command to extract the Android SDK that we already downloaded
 
 ```
 $ cd ~
-$ uzip sdk-tools-linux-3859397.zip
+$ unzip sdk-tools-linux-3859397.zip
 ```
 
 After we unzip, we must update our Android SDK to get a folder 'platform-tools' to get the ADB file
@@ -89,6 +89,24 @@ After we unzip, we must update our Android SDK to get a folder 'platform-tools' 
 $ tools/android update sdk --no-ui
 ```
 Allow the update and after that we will get the platform-tools' to get the ADB file
+
+For install build tools, run this command:
+```
+$ cd ~
+$ tools/android update sdk --filter build-tools-23.0.3,build-tools-25.0.2,build-tools-25.0.3
+```
+
+For install android SDK platforms, run this command:
+```
+$ cd ~
+$ tools/android update sdk --filter android-19,android-20,android-21,android-22,android-23
+```
+
+We can check all SDK package using: (in Installed part)
+```
+$ cd ~
+$ tools/android list sdk
+```
 
 Then, we need to configure ~/.bashrc file, so we can using android sdk command from anywhere. Also we need to set the JAVA_HOME path too. Edit .bashrc using your favourite editor:
 
@@ -116,87 +134,6 @@ Save the file, then run source command:
 $ source ~/.bashrc
 ```
 
-Then, run this command to open the Android SDK Manager:
-
-```
-$ android
-```
-
-On this window, we need to tick several packages that appium need to run:
-
-> Tools
-
-v Android SDK Tools (Latest)
-
-v Android SDK Platform-tool (Latest)
-
-v Android SDK Build-tools (Latest)
-
-> Android 6.0 (API 23)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Google APIs Intel x86 Atom System Image
-
-> Android 5.1.1 (API 22)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Google APIs Intel x86 Atom System Image
-
-> Android 5.0.1 (API 21)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Google APIs Intel x86 Atom System Image
-
-> Android 4.4.2 (API 19)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Google APIs Intel x86 Atom System Image
-
-> Android 4.3.1 (API 18)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Intel x86 Atom System Image
-
-> Android 4.2.2 (API 17)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Intel x86 Atom System Image
-
-> Android 4.1.2 (API 16)
-
-v SDK Platform
-
-v Google APIs
-
-v [Optional, if you want to using emulator] Intel x86 Atom System Image
-
-> Extras
-
-v Android Support Repository
-
-v Google Play Services
-
-v Google Web Driver
-
-Click Install Packages, Accept License, and wait until installation finished
 
 ## Install Node
 
